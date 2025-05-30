@@ -1,14 +1,23 @@
-import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  ImageBackground,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
 export default function Recommended({ mainText, image1, image2 }) {
   const arrow = require("../../assets/images/arrow.png");
+
   return (
     <View>
       <View style={[styles.horizontal]}>
         <Text style={styles.text}>{mainText}</Text>
         <Image source={arrow} style={[styles.imageArrow, styles.more]} />
       </View>
-      <View style={styles.horizontal}>
+
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         <ImageBackground
           source={image1}
           imageStyle={{ borderRadius: 20 }}
@@ -16,10 +25,25 @@ export default function Recommended({ mainText, image1, image2 }) {
         />
         <ImageBackground
           source={image2}
-          style={styles.image}
           imageStyle={{ borderRadius: 20 }}
+          style={[styles.image, styles.imageMarginRight]}
         />
-      </View>
+        <ImageBackground
+          source={image1}
+          imageStyle={{ borderRadius: 20 }}
+          style={[styles.image, styles.imageMarginRight]}
+        />
+        <ImageBackground
+          source={image2}
+          imageStyle={{ borderRadius: 20 }}
+          style={[styles.image, styles.imageMarginRight]}
+        />
+        <ImageBackground
+          source={image1}
+          imageStyle={{ borderRadius: 20 }}
+          style={styles.image}
+        />
+      </ScrollView>
     </View>
   );
 }
@@ -29,7 +53,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 10,
     fontFamily: "Montserrat-SemiBold",
-    color: "3B3B3B",
+    color: "#3B3B3B",
   },
   image: {
     width: 173,
@@ -51,5 +75,8 @@ const styles = StyleSheet.create({
   imageArrow: {
     height: 10,
     width: 10,
+  },
+  borderRadius: {
+    borderRadius: 20,
   },
 });

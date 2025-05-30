@@ -50,7 +50,7 @@ export default function Index() {
       </View>
       <View style={[styles.view, styles.recommended, styles.lessMargin]}>
         <Recommended
-          image1={club3}
+          image1={club2}
           image2={club1}
           mainText="Parties In Your Area"
         />
