@@ -26,7 +26,7 @@ export default function Recommended({ mainText, image1, image2 }) {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 24,
+    fontSize: 20,
     marginBottom: 10,
     fontFamily: "Montserrat-SemiBold",
     color: "3B3B3B",
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     top: 10,
   },
   imageArrow: {
-    height: 11,
-    width: 11,
+    height: 10,
+    width: 10,
   },
 });
